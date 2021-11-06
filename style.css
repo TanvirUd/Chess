@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+
+#chessBoard{
+    margin: auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 70px);
+}
+
+.darkBox{
+    width: 70px;
+    height: 70px;
+    background-color:chocolate;
+    text-align: center;
+    line-height: 70px;
+    font-size: 3em;
+}
+
+.lightBox{
+    width: 70px;
+    height: 70px;
+    background-color: burlywood;
+    text-align: center;
+    line-height: 70px;
+    font-size: 3em;
+}

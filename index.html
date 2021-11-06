@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="chessBoard"></div>
+    <script>       
+
+        const darkBox = document.createElement("div")
+        darkBox.classList.add("darkBox")
+
+        const lightBox = document.createElement("div")
+        lightBox.classList.add("lightBox")
+
+        const chessBoard = document.querySelector("#chessBoard")
+
+
+        //chess tiles from white to black
+        for (let i = 0; i < 4; i++) {
+                for (let l = 0; l < 4; l++){
+                    const newLight = lightBox.cloneNode()
+                    chessBoard.appendChild(newLight) 
+
+                    const newDark = darkBox.cloneNode()
+                    chessBoard.appendChild(newDark)
+                }  
+                for (let d = 0; d < 4; d++){
+                    const newDark = darkBox.cloneNode()
+                    chessBoard.appendChild(newDark)
+
+                    const newLight = lightBox.cloneNode()
+                    chessBoard.appendChild(newLight) 
+                }    
+            }
+
+
+        let box = document.getElementById('chessBoard').childNodes
+        let boxLength = box.length
+
+        // Black Pieces going from tower queen side to pawn
+        box[0].textContent = '\u265C'
+        box[1].textContent = '\u265E'
+        box[2].textContent = '\u265D'
+        box[3].textContent = '\u265B'
+        box[4].textContent = '\u265A'
+        box[5].textContent = '\u265D'
+        box[6].textContent = '\u265E'
+        box[7].textContent = '\u265C'
+        for (let i = 0; i < 8; i++) {
+            box[8+i].textContent = '\u265F'
+            
+        }
+
+        //White Pieces going from tower queen side to pawn
+        box[boxLength - 1].textContent = '\u2656'
+        box[boxLength - 2].textContent = '\u2658'
+        box[boxLength - 3].textContent = '\u2657'
+        box[boxLength - 4].textContent = '\u2655'
+        box[boxLength - 5].textContent = '\u2654'
+        box[boxLength - 6].textContent = '\u2657'
+        box[boxLength - 7].textContent = '\u2658'
+        box[boxLength - 8].textContent = '\u2656'
+        for (let i = 0; i < 8; i++) {
+            box[boxLength - (9+i)].textContent = '\u2659'            
+        }
+    </script>
+</body>
+</html>
